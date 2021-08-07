@@ -1,0 +1,35 @@
+{
+  "name": "react-native-success-animation",
+  "version": "1.0.1",
+  "description": "This success animation is react-native developers where developers can't use lottie animations for success.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijaydemonz/react-native-success-animation-npm.git"
+  },
+  "keywords": [
+    "animation",
+    "success",
+    "animation",
+    "lottie",
+    "success animation",
+    "react-native-success-animation"
+  ],
+  "dependencies": {
+    "@expo/vector-icons": "github:expo/vector-icons",
+    "expo": "^42.0.1",
+    "react-native": "^0.64.2",
+    "react-native-success-animation": "^1.0.0"
+  },
+  "author": "vijay kumar taduri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vijaydemonz/react-native-success-animation-npm/issues"
+  },
+  "homepage": "https://github.com/vijaydemonz/react-native-success-animation-npm#readme"
+}
+
+
