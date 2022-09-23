@@ -20,9 +20,8 @@
   ],
   "dependencies": {
     "@expo/vector-icons": "github:expo/vector-icons",
-    "expo": "^42.0.1",
-    "react-native": "^0.64.2",
-    "react-native-success-animation": "^1.0.0"
+    "expo": "^45.0.0",
+    "react-native": "^0.68.2"
   },
   "author": "vijay kumar taduri",
   "license": "MIT",
@@ -31,5 +30,3 @@
   },
   "homepage": "https://github.com/vijaydemonz/react-native-success-animation-npm#readme"
 }
-
-
