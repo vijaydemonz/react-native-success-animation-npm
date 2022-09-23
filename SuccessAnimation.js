@@ -6,22 +6,22 @@ import { Feather } from "@expo/vector-icons";
 
 export default function SuccessAnimation({
   size = 120,
-  iconSize= 120*.7,
+  iconSize = 120 * 0.7,
   dotColor = "#44c6b1",
   iconColor = "white",
   dotSize = 20,
   duration = 2000,
   backgroundColor = "#44c6b1",
   animatedLayerColor = "white",
-  onAnimationEnd=()=>{}
+  onAnimationEnd = () => {},
 }) {
-  let animation = useRef(new Animated.Value(0)).current;
+  const animation = useRef(new Animated.Value(0)).current;
   useEffect(() => {
     Animated.timing(animation, {
       toValue: 2,
       duration,
       useNativeDriver: false,
-    }).start(e=>onAnimationEnd());
+    }).start((e) => onAnimationEnd());
   }, []);
 
   const particalScale = animation.interpolate({
@@ -31,7 +31,7 @@ export default function SuccessAnimation({
   });
   const particalRadius = animation.interpolate({
     inputRange: [0, 1.5],
-    outputRange: [dotSize/2, 0],
+    outputRange: [dotSize / 2, 0],
     extrapolate: "clamp",
   });
   const particalOpacity = animation.interpolate({
@@ -41,10 +41,9 @@ export default function SuccessAnimation({
   });
 
   const Icon = Animated.createAnimatedComponent(Feather);
-  let SIZE = size
+  const SIZE = size;
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-     
       <View
         style={{
           flex: 1,
@@ -52,7 +51,6 @@ export default function SuccessAnimation({
           alignItems: "center",
         }}
       >
-      
         <Animated.View
           style={{
             transform: [
@@ -73,10 +71,10 @@ export default function SuccessAnimation({
             ],
             width: SIZE,
             height: SIZE,
-            borderRadius: SIZE/2,
+            borderRadius: SIZE / 2,
             backgroundColor,
           }}
-        ></Animated.View>
+        />
 
         <Animated.View
           style={{
@@ -104,10 +102,10 @@ export default function SuccessAnimation({
             position: "absolute",
             width: SIZE,
             height: SIZE,
-            borderRadius: SIZE/2,
+            borderRadius: SIZE / 2,
             backgroundColor: animatedLayerColor,
           }}
-        ></Animated.View>
+        />
 
         <Animated.View
           style={{
@@ -130,10 +128,10 @@ export default function SuccessAnimation({
             position: "absolute",
             width: SIZE,
             height: SIZE,
-            borderRadius: SIZE/2,
+            borderRadius: SIZE / 2,
             backgroundColor,
             justifyContent: "center",
-            alignItem: "center",
+            alignItems: "center",
           }}
         >
           <Icon
@@ -149,7 +147,6 @@ export default function SuccessAnimation({
             color={iconColor}
           />
         </Animated.View>
-      
       </View>
 
       <Animated.View
@@ -160,18 +157,18 @@ export default function SuccessAnimation({
           opacity: particalOpacity,
           position: "absolute",
           backgroundColor: dotColor,
-          marginLeft: - SIZE*0.25,
+          marginLeft: -SIZE * 0.25,
           transform: [
             {
               translateX: animation.interpolate({
                 inputRange: [0, 0.5, 1],
-                outputRange: [-0, -SIZE*0.417, -SIZE*0.92],
+                outputRange: [-0, -SIZE * 0.417, -SIZE * 0.92],
                 extrapolateRight: "clamp",
               }),
             },
           ],
         }}
-      ></Animated.View>
+      />
 
       <Animated.View
         style={{
@@ -181,18 +178,18 @@ export default function SuccessAnimation({
           opacity: particalOpacity,
           position: "absolute",
           backgroundColor: dotColor,
-          marginLeft: SIZE*0.25,
+          marginLeft: SIZE * 0.25,
           transform: [
             {
               translateX: animation.interpolate({
                 inputRange: [0, 0.5, 1],
-                outputRange: [SIZE*0.0417, SIZE*0.417, SIZE*0.92],
+                outputRange: [SIZE * 0.0417, SIZE * 0.417, SIZE * 0.92],
                 extrapolateRight: "clamp",
               }),
             },
           ],
         }}
-      ></Animated.View>
+      />
 
       <Animated.View
         style={{
@@ -206,13 +203,13 @@ export default function SuccessAnimation({
             {
               translateY: animation.interpolate({
                 inputRange: [0, 0.5, 1],
-                outputRange: [0, -SIZE*0.417, -SIZE*0.92],
+                outputRange: [0, -SIZE * 0.417, -SIZE * 0.92],
                 extrapolateRight: "clamp",
               }),
             },
           ],
         }}
-      ></Animated.View>
+      />
 
       <Animated.View
         style={{
@@ -222,18 +219,18 @@ export default function SuccessAnimation({
           opacity: particalOpacity,
           position: "absolute",
           backgroundColor: dotColor,
-          marginBottom: SIZE*0.25,
+          marginBottom: SIZE * 0.25,
           transform: [
             {
               translateY: animation.interpolate({
                 inputRange: [0, 0.5, 1],
-                outputRange: [SIZE*0.0417, SIZE*0.417, SIZE*0.92],
+                outputRange: [SIZE * 0.0417, SIZE * 0.417, SIZE * 0.92],
                 extrapolateRight: "clamp",
               }),
             },
           ],
         }}
-      ></Animated.View>
+      />
 
       <Animated.View
         style={{
@@ -244,25 +241,25 @@ export default function SuccessAnimation({
 
           position: "absolute",
           backgroundColor: dotColor,
-          marginLeft: SIZE*0.25,
+          marginLeft: SIZE * 0.25,
           transform: [
             {
               translateX: animation.interpolate({
                 inputRange: [0, 0.5, 0.85],
-                outputRange: [SIZE*0.0417, SIZE*0.417, SIZE*0.71],
+                outputRange: [SIZE * 0.0417, SIZE * 0.417, SIZE * 0.71],
                 extrapolateRight: "clamp",
               }),
             },
             {
               translateY: animation.interpolate({
                 inputRange: [0, 0.5, 1],
-                outputRange: [0, SIZE*0.417, SIZE*0.71],
+                outputRange: [0, SIZE * 0.417, SIZE * 0.71],
                 extrapolateRight: "clamp",
               }),
             },
           ],
         }}
-      ></Animated.View>
+      />
 
       <Animated.View
         style={{
@@ -273,53 +270,25 @@ export default function SuccessAnimation({
 
           position: "absolute",
           backgroundColor: dotColor,
-          marginLeft: SIZE*0.25,
+          marginLeft: SIZE * 0.25,
           transform: [
             {
               translateX: animation.interpolate({
                 inputRange: [0, 0.5, 1],
-                outputRange: [SIZE*0.0417, SIZE*0.417, SIZE*0.67],
+                outputRange: [SIZE * 0.0417, SIZE * 0.417, SIZE * 0.67],
                 extrapolateRight: "clamp",
               }),
             },
             {
               translateY: animation.interpolate({
                 inputRange: [0, 0.5, 1],
-                outputRange: [0, -SIZE*0.417, -SIZE*0.67],
+                outputRange: [0, -SIZE * 0.417, -SIZE * 0.67],
                 extrapolateRight: "clamp",
               }),
             },
           ],
         }}
-      ></Animated.View>
-     
-      <Animated.View
-        style={{
-          width: particalScale,
-          height: particalScale,
-          borderRadius: particalRadius,
-          opacity: particalOpacity,
-          position: "absolute",
-          backgroundColor: dotColor,
-          marginLeft: -SIZE*0.08,
-          transform: [
-            {
-              translateX: animation.interpolate({
-                inputRange: [0, 0.5, 1],
-                outputRange: [-SIZE*0.0417, -SIZE*0.417, -SIZE*0.67],
-                extrapolateRight: "clamp",
-              }),
-            },
-            {
-              translateY: animation.interpolate({
-                inputRange: [0, 0.5, 1],
-                outputRange: [0, -SIZE*0.417, -SIZE*0.67],
-                extrapolateRight: "clamp",
-              }),
-            },
-          ],
-        }}
-      ></Animated.View>
+      />
 
       <Animated.View
         style={{
@@ -329,26 +298,53 @@ export default function SuccessAnimation({
           opacity: particalOpacity,
           position: "absolute",
           backgroundColor: dotColor,
-          marginLeft: -SIZE*0.08,
+          marginLeft: -SIZE * 0.08,
           transform: [
             {
               translateX: animation.interpolate({
                 inputRange: [0, 0.5, 1],
-                outputRange: [-SIZE*0.0417, -SIZE*0.417, -SIZE*0.67],
+                outputRange: [-SIZE * 0.0417, -SIZE * 0.417, -SIZE * 0.67],
                 extrapolateRight: "clamp",
               }),
             },
             {
               translateY: animation.interpolate({
                 inputRange: [0, 0.5, 1],
-                outputRange: [0, SIZE*0.417, SIZE*0.67],
+                outputRange: [0, -SIZE * 0.417, -SIZE * 0.67],
                 extrapolateRight: "clamp",
               }),
             },
           ],
         }}
-      ></Animated.View>
-   
+      />
+
+      <Animated.View
+        style={{
+          width: particalScale,
+          height: particalScale,
+          borderRadius: particalRadius,
+          opacity: particalOpacity,
+          position: "absolute",
+          backgroundColor: dotColor,
+          marginLeft: -SIZE * 0.08,
+          transform: [
+            {
+              translateX: animation.interpolate({
+                inputRange: [0, 0.5, 1],
+                outputRange: [-SIZE * 0.0417, -SIZE * 0.417, -SIZE * 0.67],
+                extrapolateRight: "clamp",
+              }),
+            },
+            {
+              translateY: animation.interpolate({
+                inputRange: [0, 0.5, 1],
+                outputRange: [0, SIZE * 0.417, SIZE * 0.67],
+                extrapolateRight: "clamp",
+              }),
+            },
+          ],
+        }}
+      />
     </View>
   );
 }
